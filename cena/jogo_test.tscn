@@ -1,95 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://du18gg0g5i2gn"]
+[gd_scene load_steps=8 format=4 uid="uid://du18gg0g5i2gn"]
 
-[ext_resource type="Script" path="res://scripts/jogador.gd" id="1_5wsqb"]
-[ext_resource type="Texture2D" uid="uid://casmhk6k16onu" path="res://sprites/Sprite Pack 7/3 - Gordon/Idle (48 x 48).png" id="2_3adqc"]
-[ext_resource type="Texture2D" uid="uid://b06nrfbverwxu" path="res://sprites/Sprite Pack 7/3 - Gordon/Running (48 x 48).png" id="3_jp4ic"]
+[ext_resource type="PackedScene" uid="uid://bbw26uacd7vda" path="res://entidades/player.tscn" id="2_317im"]
 [ext_resource type="Texture2D" uid="uid://cmlxv44ckqmyd" path="res://sprites/Cave Tileset/Brown_Tile_Terrain (16 x 16).png" id="4_m4awj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_enmja"]
-size = Vector2(49, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7t0gw"]
-atlas = ExtResource("2_3adqc")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6xv8"]
-atlas = ExtResource("2_3adqc")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq24h"]
-atlas = ExtResource("2_3adqc")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t37wi"]
-atlas = ExtResource("2_3adqc")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwy40"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(0, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pk48k"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(48, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6e11n"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(96, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1p5hw"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(144, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_exiww"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(192, 0, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdno3"]
-atlas = ExtResource("3_jp4ic")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jgju1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7t0gw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u6xv8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lq24h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t37wi")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fwy40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pk48k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6e11n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1p5hw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_exiww")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdno3")
-}],
-"loop": true,
-"name": &"running",
-"speed": 10.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h04pc"]
 size = Vector2(2435, 139.5)
@@ -261,32 +173,6 @@ sources/1 = SubResource("TileSetAtlasSource_l4i5d")
 
 [node name="Jogo" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_5wsqb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(65.5, 50)
-shape = SubResource("RectangleShape2D_enmja")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(65, 48)
-scale = Vector2(1.25, 1.25)
-sprite_frames = SubResource("SpriteFrames_jgju1")
-animation = &"running"
-autoplay = "running"
-frame = 4
-frame_progress = 0.0993581
-speed_scale = 0.7
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(65, 45)
-zoom = Vector2(1.575, 1.575)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.3
-drag_top_margin = 0.4
-drag_right_margin = 0.3
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 2)
 
@@ -313,3 +199,5 @@ shape = SubResource("RectangleShape2D_4s23x")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAACAAAQAKAAsAAAABACAAAQALAAsAAAACACAAAQAMAAsAAAADACAAAQAKAAsAAAAEACAAAQALAAsAAAAFACAAAQAMAAsAAAAGACAAAQAKAAsAAAAHACAAAQALAAsAAAAIACAAAQAMAAsAAAAJACAAAQAKAAsAAAAKACAAAQALAAsAAAALACAAAQAMAAsAAAAMACAAAQAKAAsAAAANACAAAQALAAsAAAAOACAAAQAMAAsAAAA=")
 tile_set = SubResource("TileSet_bmwyj")
+
+[node name="player" parent="." instance=ExtResource("2_317im")]
