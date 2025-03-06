@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bbw26uacd7vda"]
 
-[ext_resource type="Script" path="res://scripts/jogador.gd" id="1_06y32"]
+[ext_resource type="Script" uid="uid://m68lnqybmbfv" path="res://scripts/jogador.gd" id="1_06y32"]
 [ext_resource type="Texture2D" uid="uid://casmhk6k16onu" path="res://sprites/Sprite Pack 7/3 - Gordon/Idle (48 x 48).png" id="2_yfc2u"]
 [ext_resource type="Texture2D" uid="uid://b707w1rd0h38b" path="res://sprites/Sprite Pack 7/3 - Gordon/Jump (48 x 64).png" id="3_c4ddh"]
 [ext_resource type="Texture2D" uid="uid://b06nrfbverwxu" path="res://sprites/Sprite Pack 7/3 - Gordon/Running (48 x 48).png" id="3_hi7i7"]
@@ -123,6 +123,7 @@ speed_scale = 0.7
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(65, 45)
 zoom = Vector2(1.575, 1.575)
+limit_left = 0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.3
