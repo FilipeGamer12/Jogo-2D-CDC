@@ -15,6 +15,12 @@ run/main_scene="res://cena/jogo_test.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=288
+window/size/viewport_height=208
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Plataforma 2D"
