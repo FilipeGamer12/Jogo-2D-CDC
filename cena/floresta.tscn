@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cvo1kbaepad7k"]
+[gd_scene load_steps=10 format=4 uid="uid://cvo1kbaepad7k"]
 
 [ext_resource type="PackedScene" uid="uid://clpe3e552wdf3" path="res://entidades/player_v2.tscn" id="1_2a2ih"]
 [ext_resource type="TileSet" uid="uid://b8xanve3gi8xc" path="res://cena/tilemap.tres" id="2_1be3n"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw3ugullnbe85" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="7_1be3n"]
 [ext_resource type="Texture2D" uid="uid://drax27on5sp7u" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="8_2a2ih"]
 [ext_resource type="Texture2D" uid="uid://c75gjl6sos5po" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="9_2a2ih"]
+[ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://entidades/camera_player.tscn" id="9_xs0jn"]
 
 [node name="floresta" type="Node2D"]
 
@@ -69,3 +70,8 @@ motion_mirroring = Vector2(288, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Leaf_top"]
 texture = ExtResource("9_2a2ih")
 centered = false
+
+[node name="Camera2D" parent="." instance=ExtResource("9_xs0jn")]
+limit_left = 0
+limit_top = 0
+limit_bottom = 208

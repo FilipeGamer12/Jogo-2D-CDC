@@ -25,6 +25,12 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Plataforma 2D"
 
+[global_group]
+
+Player=""
+LevelEnd=""
+DeathZone=""
+
 [input]
 
 left={
