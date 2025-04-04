@@ -11,11 +11,11 @@ offset_bottom = 208.0
 color = Color(0.734513, 0.488479, 0.296783, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 99.0
-offset_top = 42.0
-offset_right = 191.0
-offset_bottom = 65.0
-text = "GAME OVER"
+offset_left = 89.0
+offset_top = 40.0
+offset_right = 204.0
+offset_bottom = 63.0
+text = "VOCÊ MORREU"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 86.0

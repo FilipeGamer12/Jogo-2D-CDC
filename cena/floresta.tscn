@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=4 uid="uid://cvo1kbaepad7k"]
 
 [ext_resource type="PackedScene" uid="uid://clpe3e552wdf3" path="res://entidades/player_v2.tscn" id="1_2a2ih"]
-[ext_resource type="TileSet" uid="uid://b8xanve3gi8xc" path="res://cena/tilemap.tres" id="2_1be3n"]
+[ext_resource type="TileSet" uid="uid://b8xanve3gi8xc" path="res://tilemap.tres" id="2_1be3n"]
 [ext_resource type="Texture2D" uid="uid://bq3bnjem7udrr" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/6 - Distant_trees.png" id="4_gxydh"]
 [ext_resource type="Texture2D" uid="uid://dtulguebrikns" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="5_usbta"]
 [ext_resource type="Texture2D" uid="uid://cok4e3hqcjetn" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="6_3tiut"]
