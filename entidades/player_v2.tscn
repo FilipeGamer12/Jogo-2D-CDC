@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://clpe3e552wdf3"]
 
-[ext_resource type="Script" uid="uid://byry5qtglner1" path="res://entidades/playerV2.gd" id="1_i24gy"]
+[ext_resource type="Script" uid="uid://byry5qtglner1" path="res://scripts/playerV2.gd" id="1_i24gy"]
 [ext_resource type="Texture2D" uid="uid://casmhk6k16onu" path="res://sprites/Sprite Pack 7/3 - Gordon/Idle (48 x 48).png" id="1_vti7l"]
 [ext_resource type="Texture2D" uid="uid://b707w1rd0h38b" path="res://sprites/Sprite Pack 7/3 - Gordon/Jump (48 x 64).png" id="3_fbjc1"]
 [ext_resource type="Texture2D" uid="uid://b06nrfbverwxu" path="res://sprites/Sprite Pack 7/3 - Gordon/Running (48 x 48).png" id="4_dmvms"]

@@ -44,7 +44,17 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DeathZone"):
 		print("e morreu")
-		get_tree().reload_current_scene()
+		call_deferred("REreload_scene")
 	elif area.is_in_group("LevelEnd"):
-		get_tree().change_scene_to_file("res://cena/floresta.tscn")
-	
+		var next_level = area.next_level
+		if next_level:
+			call_deferred("load_scene", next_level)
+		else:
+			push_error("Next level not found or defined")
+
+func reload_scene():
+	get_tree().reload_current_scene()
+func load_scene(scene_name: String):
+	get_tree().change_scene_to_file("res://cena/" + scene_name + ".tscn")
+func REreload_scene():
+	get_tree().change_scene_to_file("res://cena/game_over.tscn")
