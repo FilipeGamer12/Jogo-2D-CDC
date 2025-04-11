@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://da0wdu38vfrth"]
+[gd_scene load_steps=27 format=4 uid="uid://da0wdu38vfrth"]
 
 [ext_resource type="PackedScene" uid="uid://clpe3e552wdf3" path="res://entidades/player_v2.tscn" id="1_psuav"]
 [ext_resource type="TileSet" uid="uid://b8xanve3gi8xc" path="res://tilemap.tres" id="2_7w35g"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://entidades/camera_player.tscn" id="13_0kjyo"]
 [ext_resource type="PackedScene" uid="uid://dl8ihevlrd8h5" path="res://entidades/death_zone_big.tscn" id="14_que8l"]
 [ext_resource type="PackedScene" uid="uid://dsorepkysswy5" path="res://entidades/level_end.tscn" id="15_y0ebd"]
+[ext_resource type="PackedScene" uid="uid://bvcuae6hx1kb2" path="res://entidades/nigga.tscn" id="16_cqo6h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vuct"]
 animations = [{
@@ -147,6 +148,7 @@ limit_right = 1700
 limit_bottom = 208
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1699, 103)
@@ -160,5 +162,8 @@ next_level = "fim"
 
 [node name="CollisionShape2D" parent="LevelEnd" index="0"]
 shape = SubResource("RectangleShape2D_y0ebd")
+
+[node name="Enemy" parent="." instance=ExtResource("16_cqo6h")]
+position = Vector2(603, 88)
 
 [editable path="LevelEnd"]

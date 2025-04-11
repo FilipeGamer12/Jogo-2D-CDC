@@ -22,9 +22,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and jump_count < max_jump_count:
-		velocity.y = JUMP_VELOCITY
-		jump_count += 1
-		anim.play("jump")
+		jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -40,6 +38,11 @@ func _physics_process(delta: float) -> void:
 		anim.flip_h = true
 		
 	move_and_slide()
+	
+func jump():
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+		anim.play("jump")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DeathZone"):
@@ -51,6 +54,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			call_deferred("load_scene", next_level)
 		else:
 			push_error("Next level not found or defined")
+	elif area.is_in_group("Enemies"):
+		if velocity.y > 0:
+			print("dale Coxa!")
+			area.take_damage()
+			jump()
+		else:
+			print("te mataram")
+			call_deferred("REreload_scene")
 
 func reload_scene():
 	get_tree().reload_current_scene()
