@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bvcuae6hx1kb2"]
+[gd_scene load_steps=20 format=3 uid="uid://bvcuae6hx1kb2"]
 
 [ext_resource type="Script" uid="uid://bbv8380ls0sf6" path="res://scripts/nigga.gd" id="1_5x2le"]
 [ext_resource type="Texture2D" uid="uid://cu1o87kc03vev" path="res://sprites/Sprite Pack 7/1 - Diego/Running (32 x 48).png" id="1_un35n"]
@@ -11,15 +11,15 @@ height = 40.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0wvk"]
 atlas = ExtResource("2_peage")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(0, 0, 36, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjxdq"]
 atlas = ExtResource("2_peage")
-region = Rect2(48, 0, 48, 48)
+region = Rect2(48, 0, 36, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkkoe"]
 atlas = ExtResource("2_peage")
-region = Rect2(96, 0, 48, 48)
+region = Rect2(96, 0, 36, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl7r5"]
 atlas = ExtResource("2_u5d6w")
@@ -100,6 +100,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5x2le"]
 size = Vector2(20, 34)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_peage"]
+radius = 5.0
+height = 60.0
+
 [node name="Nigga" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_5x2le")
@@ -112,6 +116,8 @@ shape = SubResource("CapsuleShape2D_5x2le")
 sprite_frames = SubResource("SpriteFrames_hl7r5")
 animation = &"attack"
 autoplay = "walk"
+frame = 2
+frame_progress = 1.0
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Enemies"]]
 collision_layer = 5
@@ -134,4 +140,15 @@ position = Vector2(0, -4)
 target_position = Vector2(225, 0)
 collision_mask = 2
 
+[node name="Temp_Attack_Area" type="Area2D" parent="." groups=["DeathZone"]]
+
+[node name="temp_shoot" type="CollisionShape2D" parent="Temp_Attack_Area"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(39, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_peage")
+debug_color = Color(0.996078, 0, 0, 0.419608)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
