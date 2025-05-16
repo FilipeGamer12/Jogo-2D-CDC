@@ -1,5 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://cuklcdp1oxrw6"]
+[gd_scene load_steps=26 format=3 uid="uid://cuklcdp1oxrw6"]
 
+[ext_resource type="Script" uid="uid://otk3pek4jj3i" path="res://entitites/stand_player.gd" id="1_ke7xg"]
 [ext_resource type="Texture2D" uid="uid://d17dqvx7pngj3" path="res://others/Jotaro/jotaro_10000-0.png" id="1_ntrws"]
 [ext_resource type="Texture2D" uid="uid://dsshog61r2ydx" path="res://others/Jotaro/jotaro_10000-1.png" id="2_ke7xg"]
 [ext_resource type="Texture2D" uid="uid://djvc61kxryryg" path="res://others/Jotaro/jotaro_10000-2.png" id="3_vjypx"]
@@ -101,6 +102,9 @@ animations = [{
 size = Vector2(20, 51)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_ke7xg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.125, -9.33738)

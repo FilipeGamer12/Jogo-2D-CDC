@@ -8,13 +8,18 @@ const JUMP_VELOCITY = -330.0
 @export var max_jump_count = 2
 const STAND_PLAYER = preload("res://entitites/stand_player.tscn")
 var jump_count = 0
+var stand: CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_just_pressed("down"):
-		var teste = STAND_PLAYER.instantiate()
-		add_sibling(teste)
+		if stand == null:
+			stand = STAND_PLAYER.instantiate()
+			stand.player = self
+			add_sibling(stand)
+		else:
+			stand.queue_free()
 	
 	# Add the gravity.
 	if not is_on_floor():
