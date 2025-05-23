@@ -66,6 +66,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func reload_scene():
 	get_tree().reload_current_scene()
 func load_scene(scene_name: String):
-	get_tree().change_scene_to_file("res://cena/" + scene_name + ".tscn")
+	get_tree().change_scene_to_file("res://aula/cena/" + scene_name + ".tscn")
 func REreload_scene():
-	get_tree().change_scene_to_file("res://cena/game_over.tscn")
+	get_tree().change_scene_to_file("res://aula/cena/game_over.tscn")

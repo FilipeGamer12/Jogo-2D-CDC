@@ -7,6 +7,8 @@ enum EnemyState {
 	morto
 }
 
+const BULLET = preload("res://entitites/bullet.tscn")
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $Hitbox
 @onready var timer: Timer = $Timer
@@ -17,6 +19,7 @@ enum EnemyState {
 var status: EnemyState
 
 var direction = 1 
+var last_direction = direction
 
 func _ready() -> void:
 	ir_para_andando()
@@ -35,6 +38,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
+	if Input.is_action_pressed("shoot"):
+		var new_bullet = BULLET.instantiate()
+		new_bullet.position = position
+		new_bullet.direction = last_direction
+		add_sibling(new_bullet)
+	
 	move_and_slide()
 
 func ir_para_andando():
@@ -45,6 +54,7 @@ func andando():
 	if not det_chão.is_colliding():
 		direction *= -1
 		scale.x *= -1
+		last_direction = direction
 	velocity.x = speed * direction
 	if det_player.is_colliding():
 		ir_para_atacando()

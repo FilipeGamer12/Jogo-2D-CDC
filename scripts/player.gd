@@ -10,56 +10,126 @@ const STAND_PLAYER = preload("res://entitites/stand_player.tscn")
 var jump_count = 0
 var stand: CharacterBody2D
 
+enum PlayerState {
+	idle,
+	walk,
+	jump
+}
+
+var status: PlayerState
+
+func _ready() -> void:
+	go_to_idle_state()
+
 func _physics_process(delta: float) -> void:
-	
 	
 	if Input.is_action_just_pressed("down"):
 		if stand == null:
 			stand = STAND_PLAYER.instantiate()
+			stand.position = position
 			stand.player = self
 			add_sibling(stand)
 		else:
 			stand.queue_free()
 	
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	else: 
+	if is_on_floor():
 		jump_count = 0
+	
+	if Input.is_action_just_pressed("punch"):
+		stand.punch()
+	
+	match status:
+		PlayerState.idle:
+			idle_state()
+		PlayerState.walk:
+			walk_state()
+		PlayerState.jump:
+			jump_state()
+	
+	move_and_slide()
+
+## MÁQUINA DE ESTADOS
+
+func go_to_idle_state():
+	status = PlayerState.idle
+	#animIdle.play()
+	animRunning.visibility_layer = false
+	animIdle.visibility_layer = true
+
+func go_to_walk_state():
+	status = PlayerState.walk
+	#anim.play("walking")
+	animRunning.visibility_layer = true
+	animIdle.visibility_layer = false
+
+func go_to_jump_state():
+	status = PlayerState.jump
+	#anim.play("jump")
+	animRunning.visibility_layer = false
+	animIdle.visibility_layer = true
+
+func idle_state():
+	move()
+	if velocity.x != 0:
+		go_to_walk_state()
+		return
+	if Input.is_action_just_pressed("jump"):
+		go_to_jump_state()
+		return
+	
+func walk_state():
+	move()
+	if velocity.x == 0:
+		go_to_idle_state()
+		return
+	if Input.is_action_just_pressed("jump"):
+		go_to_jump_state()
+		return
+	
+func jump_state():
+	move()
+	if is_on_floor():
 		if velocity.x != 0:
-			animRunning.play("running")
-			animRunning.visibility_layer = true
-			animIdle.visibility_layer = false
+			go_to_walk_state()
 		else:
-			animIdle.play("idle")
-			animRunning.visibility_layer = false
-			animIdle.visibility_layer = true
+			go_to_idle_state()
+		return
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and jump_count < max_jump_count:
-		jump()
+## MOVIMENTAÇÃO
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+func move():
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	if velocity.x > 0:
 		animIdle.flip_h = false
 		animRunning.flip_h = false
+		if stand != null:
+			stand.inverter(false)
 	elif velocity.x < 0:
 		animIdle.flip_h = true
 		animRunning.flip_h = true
-		
-	move_and_slide()
+		if stand != null:
+			stand.inverter(true)
 	
-func jump():
+	if Input.is_action_just_pressed("jump") and jump_count < max_jump_count:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
 		animRunning.play("jump")
+
+
+
+
+
+
+
+
+
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("DeathZone"):
@@ -75,7 +145,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if velocity.y > 0:
 			print("dale Coxa!")
 			area.take_damage()
-			jump()
+			go_to_jump_state()
 		else:
 			print("te mataram")
 			call_deferred("REreload_scene")

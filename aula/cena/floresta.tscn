@@ -120,7 +120,7 @@ limit_right = 843
 limit_bottom = 208
 
 [node name="LevelEnd" parent="." instance=ExtResource("10_xs0jn")]
-position = Vector2(843, 182)
+position = Vector2(844, 182)
 next_level = "tropical"
 
 [node name="props" type="TileMapLayer" parent="."]

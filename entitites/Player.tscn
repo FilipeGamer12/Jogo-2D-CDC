@@ -95,6 +95,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("31_u7j4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_wqu1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4os38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7uku5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_3ilm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_77gjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rviga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0qx57")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_mea7i")
 }, {
 "duration": 1.0,
@@ -143,37 +172,8 @@ animations = [{
 "texture": ExtResource("22_3inf7")
 }],
 "loop": true,
-"name": &"running",
+"name": &"walking",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("31_u7j4d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_wqu1b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_4os38")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_7uku5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_3ilm3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_77gjo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_rviga")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_0qx57")
-}],
-"loop": true,
-"name": &"test",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfq1j"]
@@ -190,19 +190,22 @@ scale = Vector2(0.359375, 0.359375)
 sprite_frames = SubResource("SpriteFrames_pmnq2")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.583531
 
 [node name="Running" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-1, -3)
 scale = Vector2(0.359375, 0.359375)
 sprite_frames = SubResource("SpriteFrames_6wnxb")
-animation = &"running"
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.374658
 
 [node name="Teste" type="AnimatedSprite2D" parent="Player"]
 visible = false
 position = Vector2(-1, -2)
 scale = Vector2(0.359375, 0.359375)
 sprite_frames = SubResource("SpriteFrames_6wnxb")
-animation = &"running"
+animation = &"walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -2.5)

@@ -13,5 +13,5 @@ size = Vector2(288, 20)
 position = Vector2(144, 198)
 shape = SubResource("RectangleShape2D_ij1v8")
 
-[node name="Node2D" parent="RigidBody2D" instance=ExtResource("1_errlg")]
+[node name="Player" parent="RigidBody2D" instance=ExtResource("1_errlg")]
 position = Vector2(29, 161)
