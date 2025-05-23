@@ -207,3 +207,8 @@ animation = &"running"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_cfq1j")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 0)
+limit_left = 0
+limit_bottom = 200
