@@ -21,12 +21,21 @@ vertical_alignment = 1
 
 [node name="play button" type="Button" parent="."]
 z_index = 1
-offset_left = 108.0
-offset_top = 152.0
-offset_right = 179.0
-offset_bottom = 188.0
+offset_left = 105.0
+offset_top = 119.0
+offset_right = 185.0
+offset_bottom = 159.0
 theme_override_fonts/font = ExtResource("2_vjb58")
 text = "Play"
+
+[node name="credits" type="Button" parent="."]
+z_index = 1
+offset_left = 113.0
+offset_top = 165.0
+offset_right = 176.0
+offset_bottom = 196.0
+text = "Credits
+"
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(143.75, 103.75)
@@ -34,3 +43,4 @@ scale = Vector2(0.281738, 0.203613)
 texture = ExtResource("3_con2f")
 
 [connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
