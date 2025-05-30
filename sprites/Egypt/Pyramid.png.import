@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccflqsxj7qowu"
-path="res://.godot/imported/Terrain (16 x 16).png-82cfd3ed22395b191bc00cc8772785dd.ctex"
+uid="uid://d0xmrnk7kdbq5"
+path="res://.godot/imported/Pyramid.png-47f8428a3a29979f1e2cca892c05e25a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://others/4 - Winter World/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-82cfd3ed22395b191bc00cc8772785dd.ctex"]
+source_file="res://sprites/Egypt/Pyramid.png"
+dest_files=["res://.godot/imported/Pyramid.png-47f8428a3a29979f1e2cca892c05e25a.ctex"]
 
 [params]
 

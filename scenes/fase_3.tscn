@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cookm3h067utr"]
+
+[ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_7flai"]
+[ext_resource type="Texture2D" uid="uid://f2ihle44tpll" path="res://sprites/Egypt/egypt-bg.png" id="2_ko64l"]
+
+[node name="fase_3" type="Node2D"]
+
+[node name="ground" type="TileMapLayer" parent="."]
+
+[node name="props" type="TileMapLayer" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("1_7flai")]
+position = Vector2(25, 166)
+scale = Vector2(0.281494, 0.203369)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(143.875, 91)
+scale = Vector2(0.281494, 0.228516)
+texture = ExtResource("2_ko64l")
