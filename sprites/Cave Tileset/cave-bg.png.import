@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nsgsgfra7eg8"
-path="res://.godot/imported/Winter_entities (16 x 16).png-8efa2e63fba359df593796c98b87c390.ctex"
+uid="uid://ciadblr8p0v7d"
+path="res://.godot/imported/cave-bg.png-85024a1e7cbf51229b9df2e7e73889da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://others/4 - Winter World/Winter_entities (16 x 16).png"
-dest_files=["res://.godot/imported/Winter_entities (16 x 16).png-8efa2e63fba359df593796c98b87c390.ctex"]
+source_file="res://sprites/Cave Tileset/cave-bg.png"
+dest_files=["res://.godot/imported/cave-bg.png-85024a1e7cbf51229b9df2e7e73889da.ctex"]
 
 [params]
 

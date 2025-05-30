@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caadkwhps1ht5"
-path="res://.godot/imported/2 - Smaller_mountains.png-22b5ec79c93c55cb765c7c752bd44b45.ctex"
+uid="uid://bun23sl0pxd6e"
+path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-9b7ea741b383c1efb833b66f7d801fd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://others/4 - Winter World/Background parts/2 - Smaller_mountains.png"
-dest_files=["res://.godot/imported/2 - Smaller_mountains.png-22b5ec79c93c55cb765c7c752bd44b45.ctex"]
+source_file="res://sprites/Cave Tileset/_Complete_static_BG_(288 x 208).png"
+dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-9b7ea741b383c1efb833b66f7d801fd2.ctex"]
 
 [params]
 
