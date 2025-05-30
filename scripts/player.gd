@@ -38,7 +38,8 @@ func _physics_process(delta: float) -> void:
 		jump_count = 0
 	
 	if Input.is_action_just_pressed("punch"):
-		stand.punch()
+		if stand != null:
+			stand.punch()
 	
 	match status:
 		PlayerState.idle:

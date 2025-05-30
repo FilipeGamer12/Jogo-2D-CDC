@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cuklcdp1oxrw6"]
+[gd_scene load_steps=31 format=3 uid="uid://cuklcdp1oxrw6"]
 
 [ext_resource type="Script" uid="uid://otk3pek4jj3i" path="res://scripts/stand_player.gd" id="1_ke7xg"]
 [ext_resource type="Texture2D" uid="uid://d17dqvx7pngj3" path="res://others/Jotaro/jotaro_10000-0.png" id="1_ntrws"]
@@ -23,6 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://dmp7nn2ickkth" path="res://others/Jotaro/jotaro_10000-19.png" id="20_u1bch"]
 [ext_resource type="Texture2D" uid="uid://eswyt7dc5uph" path="res://others/Jotaro/jotaro_10000-20.png" id="21_5ircv"]
 [ext_resource type="Texture2D" uid="uid://bxyv1ldhssgaw" path="res://others/Jotaro/jotaro_10000-21.png" id="22_fabhp"]
+[ext_resource type="Texture2D" uid="uid://cgo8rpqxvmh7b" path="res://others/recortes/stand/punch/Slice 1.png" id="24_rmeft"]
+[ext_resource type="Texture2D" uid="uid://b1c4nmp3cuecb" path="res://others/recortes/stand/punch/Slice 2.png" id="25_70lra"]
+[ext_resource type="Texture2D" uid="uid://c60ei7ylojdmt" path="res://others/recortes/stand/punch/Slice 3.png" id="26_ijjxm"]
+[ext_resource type="Texture2D" uid="uid://bxmdhquttif0j" path="res://others/recortes/stand/punch/Slice 4.png" id="27_dl343"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7s3u"]
 animations = [{
@@ -96,6 +100,23 @@ animations = [{
 "loop": true,
 "name": &"idle_stand",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_rmeft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_70lra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ijjxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dl343")
+}],
+"loop": false,
+"name": &"punch",
+"speed": 17.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i70yj"]
@@ -110,30 +131,25 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_ke7xg")
 
-[node name="Star_anim" type="AnimatedSprite2D" parent="."]
+[node name="Star_anim_idle" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.125, -9.33738)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_s7s3u")
-animation = &"idle_stand"
+animation = &"punch"
 autoplay = "idle_stand"
-frame = 2
-frame_progress = 0.849218
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.4375, -8)
 shape = SubResource("RectangleShape2D_i70yj")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Damage" type="Area2D" parent="."]
 
-[node name="damage" type="CollisionShape2D" parent="Area2D"]
+[node name="damage" type="CollisionShape2D" parent="Damage"]
 process_mode = 4
 position = Vector2(24, -15)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ke7xg")
 debug_color = Color(0.998597, 0, 0.137799, 0.42)
 
-[node name="punch_time" type="Timer" parent="."]
-wait_time = 0.147
-one_shot = true
-
-[connection signal="timeout" from="punch_time" to="." method="_on_punch_time_timeout"]
+[connection signal="animation_finished" from="Star_anim_idle" to="." method="_on_star_anim_idle_animation_finished"]
+[connection signal="area_entered" from="Damage" to="." method="_on_damage_area_entered"]

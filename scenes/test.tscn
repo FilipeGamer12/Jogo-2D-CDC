@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dadg7x2vgmn0o"]
+[gd_scene load_steps=4 format=3 uid="uid://dadg7x2vgmn0o"]
 
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_errlg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij1v8"]
 size = Vector2(288, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_errlg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +17,10 @@ shape = SubResource("RectangleShape2D_ij1v8")
 
 [node name="Player" parent="RigidBody2D" instance=ExtResource("1_errlg")]
 position = Vector2(29, 161)
+
+[node name="enemy_test" type="Area2D" parent="."]
+position = Vector2(144, 165)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_test"]
+shape = SubResource("CapsuleShape2D_errlg")
+debug_color = Color(0.989449, 0, 0.290316, 0.42)

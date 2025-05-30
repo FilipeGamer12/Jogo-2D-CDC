@@ -190,7 +190,8 @@ scale = Vector2(0.359375, 0.359375)
 sprite_frames = SubResource("SpriteFrames_pmnq2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.583531
+frame = 3
+frame_progress = 0.969323
 
 [node name="Running" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-1, -3)
