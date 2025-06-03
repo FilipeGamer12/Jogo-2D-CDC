@@ -62,11 +62,13 @@ func jump():
 		animRunning.play("jump")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Hello")
 	if area.is_in_group("DeathZone"):
 		print("e morreu")
 		call_deferred("REreload_scene")
 	elif area.is_in_group("LevelEnd"):
 		var next_level = area.next_level
+		print(next_level)
 		if next_level:
 			call_deferred("load_scene", next_level)
 		else:
