@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccflqsxj7qowu" path="res://sprites/4 - Winter World/Terrain (16 x 16).png" id="1_umuk1"]
 [ext_resource type="Texture2D" uid="uid://b1p6a26drjjtj" path="res://aula/sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_cggpx"]
-[ext_resource type="Texture2D" uid="uid://njeang0w8oms" path="res://aula/sprites/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_cggpx"]
+[ext_resource type="Texture2D" uid="uid://njeang0w8oms" path="res://sprites/3 - Tropics/Terrain (16 x 16).png" id="3_cggpx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bm5io"]
 resource_name = "neve"

@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c75gjl6sos5po" path="res://aula/sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="9_2a2ih"]
 [ext_resource type="PackedScene" uid="uid://b07wlx5vdkvnc" path="res://aula/entidades/camera_player.tscn" id="9_xs0jn"]
 [ext_resource type="PackedScene" uid="uid://dsorepkysswy5" path="res://aula/entidades/level_end.tscn" id="10_xs0jn"]
-[ext_resource type="Texture2D" uid="uid://b7wpx61ker3so" path="res://aula/sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="11_c6d1w"]
-[ext_resource type="Texture2D" uid="uid://j5drtb8picv2" path="res://aula/sprites/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="12_oa6bd"]
-[ext_resource type="Texture2D" uid="uid://kmlkg7ujuie5" path="res://aula/sprites/Seasonal Tilesets/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="13_xjl2s"]
-[ext_resource type="Texture2D" uid="uid://dwwh4cfp2qvro" path="res://aula/sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="14_mnwuu"]
+[ext_resource type="Texture2D" uid="uid://b7wpx61ker3so" path="res://sprites/3 - Tropics/Tropics_entities (16 x 16).png" id="11_c6d1w"]
+[ext_resource type="Texture2D" uid="uid://j5drtb8picv2" path="res://sprites/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="12_oa6bd"]
+[ext_resource type="Texture2D" uid="uid://kmlkg7ujuie5" path="res://sprites/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="13_xjl2s"]
+[ext_resource type="Texture2D" uid="uid://dwwh4cfp2qvro" path="res://sprites/5 - Misc. universal tiles/House (112 x 96).png" id="14_mnwuu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2u0f"]
 texture = ExtResource("11_c6d1w")
