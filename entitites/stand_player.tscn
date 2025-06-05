@@ -123,12 +123,13 @@ animations = [{
 size = Vector2(18.875, 42)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ke7xg"]
-radius = 7.0
+radius = 3.0
+height = 24.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = -1
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 script = ExtResource("1_ke7xg")
 
 [node name="Star_anim_idle" type="AnimatedSprite2D" parent="."]
@@ -143,10 +144,12 @@ position = Vector2(-0.4375, -8)
 shape = SubResource("RectangleShape2D_i70yj")
 
 [node name="Damage" type="Area2D" parent="."]
+process_mode = 4
+collision_layer = 2
+collision_mask = 4
 
 [node name="damage" type="CollisionShape2D" parent="Damage"]
-process_mode = 4
-position = Vector2(24, -15)
+position = Vector2(22, -20)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ke7xg")
 debug_color = Color(0.998597, 0, 0.137799, 0.42)

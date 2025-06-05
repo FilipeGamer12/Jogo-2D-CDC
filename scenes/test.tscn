@@ -1,26 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dadg7x2vgmn0o"]
+[gd_scene load_steps=5 format=3 uid="uid://dadg7x2vgmn0o"]
 
+[ext_resource type="Script" uid="uid://yghlm3cdd2w" path="res://scripts/test_spawner.gd" id="1_74lek"]
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://37mt24b3fowb" path="res://entitites/Enemy_Dummy.tscn" id="3_iyx0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij1v8"]
-size = Vector2(288, 20)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_errlg"]
+size = Vector2(268, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_74lek")
 
 [node name="RigidBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(144, 198)
+position = Vector2(154, 198)
 shape = SubResource("RectangleShape2D_ij1v8")
 
-[node name="Player" parent="RigidBody2D" instance=ExtResource("1_errlg")]
-position = Vector2(29, 161)
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_iyx0m")]
 
-[node name="enemy_test" type="Area2D" parent="."]
-position = Vector2(144, 165)
+[node name="Player" parent="." instance=ExtResource("1_errlg")]
+position = Vector2(30, 161)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_test"]
-shape = SubResource("CapsuleShape2D_errlg")
-debug_color = Color(0.989449, 0, 0.290316, 0.42)
+[node name="Enemy_Dummy" parent="." instance=ExtResource("3_iyx0m")]
+position = Vector2(148, 157)
