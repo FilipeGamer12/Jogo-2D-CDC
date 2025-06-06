@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://1cg3m6f0ixyk"]
+[gd_scene load_steps=18 format=4 uid="uid://1cg3m6f0ixyk"]
 
 [ext_resource type="Texture2D" uid="uid://cmlxv44ckqmyd" path="res://sprites/Cave Tileset/Brown_Tile_Terrain (16 x 16).png" id="1_rikq0"]
 [ext_resource type="Texture2D" uid="uid://ri1w2rtnifst" path="res://sprites/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="2_4akv0"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ckl3hl7fxlpi8" path="res://sprites/5 - Misc. universal tiles/Metal_Wire_fence (16 x 16).png" id="3_s1etw"]
 [ext_resource type="Texture2D" uid="uid://j5drtb8picv2" path="res://sprites/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="4_ihy5e"]
 [ext_resource type="Texture2D" uid="uid://b8o34pan08obi" path="res://sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="5_3rj3r"]
-[ext_resource type="PackedScene" uid="uid://cu2jhrub6b0ft" path="res://level_end.tscn" id="7_ihy5e"]
+[ext_resource type="PackedScene" uid="uid://cu2jhrub6b0ft" path="res://entitites/level_end.tscn" id="7_ihy5e"]
 [ext_resource type="Texture2D" uid="uid://ciadblr8p0v7d" path="res://sprites/Cave Tileset/cave-bg.png" id="7_s1etw"]
+[ext_resource type="PackedScene" uid="uid://c767e3ml71xjo" path="res://entitites/death_zone.tscn" id="9_3rj3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vo7e"]
 texture = ExtResource("1_rikq0")
@@ -449,4 +450,10 @@ shape = SubResource("RectangleShape2D_4akv0")
 position = Vector2(1616, 88)
 next_level = "fase_3"
 
+[node name="DeathZone" parent="." instance=ExtResource("9_3rj3r")]
+
+[node name="CollisionShape2D" parent="DeathZone" index="0"]
+position = Vector2(875, 210)
+
 [editable path="Node2D"]
+[editable path="DeathZone"]

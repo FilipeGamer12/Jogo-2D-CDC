@@ -62,10 +62,8 @@ func jump():
 		animRunning.play("jump")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("Hello")
 	if area.is_in_group("DeathZone"):
-		print("e morreu")
-		call_deferred("REreload_scene")
+		call_deferred("reload_scene")
 	elif area.is_in_group("LevelEnd"):
 		var next_level = area.next_level
 		print(next_level)
@@ -82,8 +80,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			print("te mataram")
 			call_deferred("REreload_scene")
 
-#func reload_scene():
-#	get_tree().reload_current_scene()
+func reload_scene():
+	Global.current_level = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://scenes/gameOver.tscn")
 #func load_scene(scene_name: String):
 #	get_tree().change_scene_to_file("res://cena/" + scene_name + ".tscn")
 #func REreload_scene():
