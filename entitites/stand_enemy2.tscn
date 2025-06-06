@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcute71j5yuwi"]
+
+[ext_resource type="Texture2D" uid="uid://cng3wi3eeixdq" path="res://others/pack de sprites de pucci/autor 0011_10000-1.png" id="1_pum01"]
+[ext_resource type="Texture2D" uid="uid://widvaqwceiuk" path="res://others/pack de sprites de pucci/autor 0011_10000-2.png" id="2_p5ptp"]
+[ext_resource type="Texture2D" uid="uid://b7up450nu6a4x" path="res://others/pack de sprites de pucci/autor 0011_10000-3.png" id="3_iswqe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dl1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mj6e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pum01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p5ptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iswqe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2dl1f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mj6e3")
+frame_progress = 0.138333

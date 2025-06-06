@@ -1,0 +1,119 @@
+[gd_scene load_steps=21 format=3 uid="uid://w0aoap7ccnac"]
+
+[ext_resource type="Texture2D" uid="uid://dacgque1g7if8" path="res://others/pack de sprites de pucci/autor 0011_0-0.png" id="1_8dbq3"]
+[ext_resource type="Texture2D" uid="uid://wlv72pvel2rh" path="res://others/pack de sprites de pucci/autor 0011_0-1.png" id="2_ab8ms"]
+[ext_resource type="Texture2D" uid="uid://bwjuaio58dxak" path="res://others/pack de sprites de pucci/autor 0011_0-2.png" id="3_1s5kj"]
+[ext_resource type="Texture2D" uid="uid://w137tnw8bht5" path="res://others/pack de sprites de pucci/autor 0011_0-3.png" id="4_jllq5"]
+[ext_resource type="Texture2D" uid="uid://16fqos73imus" path="res://others/pack de sprites de pucci/autor 0011_0-4.png" id="5_hckeb"]
+[ext_resource type="Texture2D" uid="uid://bqikun1dsky1s" path="res://others/pack de sprites de pucci/autor 0011_20-0.png" id="6_hckeb"]
+[ext_resource type="Texture2D" uid="uid://cp3s1ipbgxreh" path="res://others/pack de sprites de pucci/autor 0011_20-1.png" id="7_ihmep"]
+[ext_resource type="Texture2D" uid="uid://ccaadohcj67r8" path="res://others/pack de sprites de pucci/autor 0011_20-2.png" id="8_m2nll"]
+[ext_resource type="Texture2D" uid="uid://b1gxk2hgr3bna" path="res://others/pack de sprites de pucci/autor 0011_20-3.png" id="9_7dnvv"]
+[ext_resource type="Texture2D" uid="uid://di2jovc37tcpy" path="res://others/pack de sprites de pucci/autor 0011_20-4.png" id="10_8inqk"]
+[ext_resource type="Texture2D" uid="uid://cgoxxljqbgrve" path="res://others/pack de sprites de pucci/autor 0011_20-5.png" id="11_bj4er"]
+[ext_resource type="Texture2D" uid="uid://diq6ujoqjejdm" path="res://others/pack de sprites de pucci/autor 0011_20-6.png" id="12_mirml"]
+[ext_resource type="Texture2D" uid="uid://dg1rd1xk0066o" path="res://others/pack de sprites de pucci/autor 0011_20-7.png" id="13_8t6ll"]
+[ext_resource type="Texture2D" uid="uid://b8lpj0xwmbvd1" path="res://others/pack de sprites de pucci/autor 0011_20-8.png" id="14_q02md"]
+[ext_resource type="Texture2D" uid="uid://cgnqmxyhdga5x" path="res://others/pack de sprites de pucci/autor 0011_20-9.png" id="15_3rht5"]
+[ext_resource type="Texture2D" uid="uid://cxi4ux1l2trno" path="res://others/pack de sprites de pucci/autor 0011_20-10.png" id="16_sflpe"]
+[ext_resource type="Texture2D" uid="uid://b51kotwmbubm7" path="res://others/pack de sprites de pucci/autor 0011_20-11.png" id="17_cf08r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7et56"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8dbq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ab8ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1s5kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jllq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hckeb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2nll"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hckeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ihmep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m2nll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7dnvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8inqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bj4er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mirml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8t6ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q02md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3rht5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sflpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_cf08r")
+}],
+"loop": true,
+"name": &"running",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrhvv"]
+size = Vector2(61, 117)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy2" type="CharacterBody2D" parent="."]
+
+[node name="Idle" type="AnimatedSprite2D" parent="Enemy2"]
+sprite_frames = SubResource("SpriteFrames_7et56")
+animation = &"idle"
+frame = 4
+frame_progress = 0.696734
+
+[node name="Running" type="AnimatedSprite2D" parent="Enemy2"]
+sprite_frames = SubResource("SpriteFrames_m2nll")
+animation = &"running"
+frame = 5
+frame_progress = 0.85014
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_mrhvv")
