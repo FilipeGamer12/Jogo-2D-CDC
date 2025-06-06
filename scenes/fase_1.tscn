@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://w8ycgf60775j"]
+[gd_scene load_steps=19 format=4 uid="uid://w8ycgf60775j"]
 
 [ext_resource type="PackedScene" uid="uid://bad04yp2jw8kb" path="res://entitites/Player.tscn" id="1_ktbmo"]
 [ext_resource type="Texture2D" uid="uid://ccflqsxj7qowu" path="res://sprites/4 - Winter World/Terrain (16 x 16).png" id="1_u7fro"]
@@ -10,7 +10,8 @@
 [ext_resource type="FontFile" uid="uid://b6yfq0rse4cxs" path="res://others/fonts/Minecraftia-Regular.ttf" id="6_o5tko"]
 [ext_resource type="Texture2D" uid="uid://dqpd6jydxbaqt" path="res://others/assets/jump_key.png" id="7_o5tko"]
 [ext_resource type="Texture2D" uid="uid://nsgsgfra7eg8" path="res://sprites/4 - Winter World/Winter_entities (16 x 16).png" id="9_m44rk"]
-[ext_resource type="PackedScene" uid="uid://cu2jhrub6b0ft" path="res://level_end.tscn" id="10_fbhx4"]
+[ext_resource type="PackedScene" uid="uid://cu2jhrub6b0ft" path="res://entitites/level_end.tscn" id="10_fbhx4"]
+[ext_resource type="PackedScene" uid="uid://c767e3ml71xjo" path="res://entitites/death_zone.tscn" id="12_26t1p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktbmo"]
 texture = ExtResource("1_u7fro")
@@ -203,6 +204,8 @@ motion_mirroring = Vector2(288, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Big_mountain"]
 texture_repeat = 2
+position = Vector2(0, -63)
+scale = Vector2(1, 1.30288)
 texture = ExtResource("2_o5tko")
 centered = false
 region_enabled = true
@@ -275,4 +278,11 @@ shape = SubResource("RectangleShape2D_m44rk")
 position = Vector2(1297, 153)
 next_level = "fase_2"
 
+[node name="DeathZone" parent="." instance=ExtResource("12_26t1p")]
+position = Vector2(435, 211)
+
+[node name="CollisionShape2D" parent="DeathZone" index="0"]
+position = Vector2(370, 0)
+
 [editable path="Node2D"]
+[editable path="DeathZone"]
